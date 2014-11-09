@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="tictac">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Крестики нолики</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="font-awesome-4.2.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body ng-controller="MainController">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div ng-if="!endGame" class="field" style="height:300px;width:300px;">
+            <div ng-click="move(cell,'player')" class="cell" ng-repeat="cell in cells" >
+                <span ng-if="cell.player" class="fa {{cell.player}}"></span>
+            </div>
+        </div>
+        <div ng-if="endGame" class="text-holder">
+            <h1>Конец игры</h1>
+            <h2>{{winner}}!</h2>
+            <div class="clearfix">
+                <button ng-click="start()" class="more-game">Играть еще раз</button>
+            </div>
+        </div>
+        <div class=""></div>
+        <script src="bower_components/underscore/underscore-min.js"></script>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>
+
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
