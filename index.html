@@ -18,7 +18,7 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <div ng-if="!endGame" class="field" style="height:300px;width:300px;">
+        <div ng-if="!endGame" class="field">
             <div ng-click="move(cell,'player')" class="cell" ng-repeat="cell in cells" >
                 <span ng-if="cell.player" class="fa {{cell.player}}"></span>
             </div>
@@ -30,12 +30,9 @@
                 <button ng-click="start()" class="more-game">Играть еще раз</button>
             </div>
         </div>
-        <div class=""></div>
         <script src="bower_components/underscore/underscore-min.js"></script>
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/angular/angular.min.js"></script>
-
-
         <script src="js/main.js"></script>
     </body>
 </html>
